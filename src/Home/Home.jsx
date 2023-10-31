@@ -1,15 +1,8 @@
-import { View, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ViewScreen from "../components/ViewScreen/ViewScreen";
+import Map from "../components/Map/Map";
 
 const Tab = createBottomTabNavigator();
-
-function Home() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
 
 function HomeScreen() {
   return (
@@ -21,13 +14,16 @@ function HomeScreen() {
     >
       <Tab.Screen
         name="Inicio"
-        component={Home}
+        component={ViewScreen}
         options={{ title: "Inicio" }}
       />
       <Tab.Screen
         name="Map"
-        component={Home}
-        options={{ title: "Mapa" }}
+        component={Map}
+        options={{
+          title: "Mapa", header: () => null,
+          headerLeft: () => null,
+        }}
       />
     </Tab.Navigator>
   );

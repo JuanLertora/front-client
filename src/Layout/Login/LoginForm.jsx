@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { View, Button, StyleSheet } from "react-native";
-import { loggedAction } from "./store/reducers/LoginReducers";
-import FancyText from "./common/FancyText";
-import FancyTextInput from "./common/FancyTextInput";
+import { loggedAction } from "../../store/reducers/LoginReducers";
+import FancyText from "../../common/FancyText";
+import FancyTextInput from "../../common/FancyTextInput";
 
 const LoginForm = ({ navigation }) => {
   const dispatch = useDispatch()
@@ -17,7 +17,6 @@ const LoginForm = ({ navigation }) => {
         password
     }
     dispatch(loggedAction(params))
-    navigation.navigate('HomeScreen')
   };
 
   return (
